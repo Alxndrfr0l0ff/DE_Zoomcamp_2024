@@ -19,7 +19,7 @@ def main(params):
     os.system(f"wget {url}")
 
     chunk_size = 100_000
-    parquet_file = pq.ParquetFile('yellow_tripdata_2021-01.parquet')
+    parquet_file = pq.ParquetFile('green_tripdata_2019-09.parquet')
     conn = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}')
 
     for batch in parquet_file.iter_batches(batch_size=chunk_size):
